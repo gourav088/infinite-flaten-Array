@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+// step 1. Define a function named 'flatArr' that takes in a parameter 'arr'
+// step 2. Define an empty array 'newArr'
+// step 3. use a for loop to iterate through the 'arr'
+// step 4. check if current element is an array using Array.isArray(arr[i])
+// step 5. if true, call the flatArr function recursionly with the current element 'arr[i]' as parameter
+// step 6. if false, push the current element to the newArr
+// step 7. return the newArr
+
+let arr = [1, 2, 3, [1, 2, 3, 1, [1, 2]], 1, [1, 2],[1,2,3 ,[3,4]],[1,2,3 ,[3,4]]];
+
+let newArr = [];
+
+const flatArr = (arr) =>{
+
+    for (let i = 0; i < arr.length; i++) {
+         
+        if(Array.isArray(arr[i])){
+            flatArr(arr[i]);
+        }else{
+          newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+console.log(flatArr(arr));
+</script>
